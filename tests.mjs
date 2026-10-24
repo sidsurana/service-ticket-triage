@@ -1,0 +1,2 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {analyze,sample} from './engine.mjs';
+test('approval never bypasses a blocked ticket',()=>{let r=analyze(sample,{approved:true});assert.equal(r.rows[2].status,'BLOCK');assert.equal(r.rows[0].status,'MOCK EXECUTED')});test('all allowed writes wait for approval',()=>assert.equal(analyze(sample).rows[0].status,'AWAITING APPROVAL'));test('invalid queue rejected',()=>assert.throws(()=>analyze('{}')));

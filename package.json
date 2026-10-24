@@ -1,0 +1,10 @@
+{
+  "name": "service-ticket-triage",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests.mjs"
+  },
+  "description": "Review synthetic support tickets, policy boundaries and mock action approvals.",
+  "license": "MIT"
+}
